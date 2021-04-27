@@ -6,6 +6,8 @@ import { Switch, Route } from 'react-router-dom';
 // import ContactList from './conponents/ContactList.container';
 // import { fetchContact } from './redux/operations';
 import Homeview from './views/Homeview';
+import LoginView from './views/LoginView';
+import RegisterView from './views/RegisterView';
 import Appbar from './conponents/AppBar';
 import Container from './conponents/Container/Container';
 import './App.css';
@@ -15,6 +17,8 @@ const App = () => (
     <Appbar />
     <Switch>
       <Route exact path="/" component={Homeview} />
+      <Route exact path="/login" component={LoginView} />
+      <Route exact path="/register" component={RegisterView} />
     </Switch>
   </Container>
 );

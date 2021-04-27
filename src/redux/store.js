@@ -10,6 +10,7 @@ import {
 } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
 import contactsReduсer from './reducer';
+import authReduсer from './auth/auth-reduser';
 
 // const initialState = {
 //   contacts: {
@@ -43,6 +44,7 @@ const middleware = [
 
 const store = configureStore({
   reducer: {
+    auth: authReduсer,
     contacts: contactsReduсer,
   },
   middleware,
