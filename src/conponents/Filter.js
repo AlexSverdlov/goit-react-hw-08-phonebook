@@ -1,19 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../redux/actions';
-import contactSelectors from '../redux/contacts-selectors';
+import Form from 'react-bootstrap/Form';
+import * as actions from '../redux/contacts/contacts-actions';
+import contactSelectors from '../redux/contacts/contacts-selectors';
 
 const Filter = ({ textFilter, onChange }) => (
-  <label>
-    Find contact by name
-    <input
-      style={{ display: 'block' }}
+  <Form.Group controlId="exampleForm.ControlInput1">
+    <Form.Label>Найти контакт по имени</Form.Label>
+    <Form.Control
       type="text"
       name="filter"
       value={textFilter}
       onChange={onChange}
     />
-  </label>
+  </Form.Group>
+
+  // <label>
+  //   Find contact by name
+  //   <input
+  //     style={{ display: 'block' }}
+  //     type="text"
+  //     name="filter"
+  //     value={textFilter}
+  //     onChange={onChange}
+  //   />
+  // </label>
 );
 
 const mapStateToProps = state => ({

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import authOperations from '../redux/auth/auth-operations';
 
 class RegisterView extends Component {
@@ -20,39 +22,46 @@ class RegisterView extends Component {
   render() {
     const { name, email, password } = this.state;
     return (
-      <div>
-        <h1>Страница регистрации</h1>
-        <form onSubmit={this.handleSubmit} autoComplete="off">
-          <label>
-            Имя
-            <input
-              type="text"
-              name="name"
-              value={name}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            Почта
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            Пароль
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={this.handleChange}
-            />
-          </label>
-          <button type="submit">Регистрация</button>
-        </form>
-      </div>
+      <Form onSubmit={this.handleSubmit} autoComplete="off">
+        <h3>Страница регистрации</h3>
+        <Form.Group controlId="formName">
+          <Form.Label>Имя</Form.Label>
+          <Form.Control
+            type="text"
+            name="name"
+            value={name}
+            onChange={this.handleChange}
+          />
+        </Form.Group>
+
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Почта</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Enter email"
+            name="email"
+            value={email}
+            onChange={this.handleChange}
+          />
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
+
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Пароль</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={password}
+            onChange={this.handleChange}
+          />
+        </Form.Group>
+        <Button variant="outline-primary" type="submit">
+          Регистрация
+        </Button>
+      </Form>
     );
   }
 }

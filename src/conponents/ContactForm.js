@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addContact } from '../redux/operations';
-import contactSelectors from '../redux/contacts-selectors';
+import { addContact } from '../redux/contacts/contacts-operations';
+import contactSelectors from '../redux/contacts/contacts-selectors';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 class ContactForm extends React.Component {
   state = {
@@ -36,34 +38,59 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      <form
-        onSubmit={this.handleSubmit}
-        style={{
-          width: '200px',
-          padding: '10px',
-          border: '1px solid black',
-        }}
-      >
-        <label>
-          Name
-          <input
+      <Form onSubmit={this.handleSubmit} autoComplete="off">
+        <Form.Group>
+          <Form.Label>Имя</Form.Label>
+          <Form.Control
             type="text"
             name="name"
             value={this.state.name}
             onChange={this.handleChange}
           />
-        </label>
-        <label>
-          Number
-          <input
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label>Номер</Form.Label>
+          <Form.Control
             type="text"
             name="number"
             value={this.state.number}
             onChange={this.handleChange}
           />
-        </label>
-        <button type="Submit">Add contact</button>
-      </form>
+        </Form.Group>
+        <Button variant="outline-primary" type="submit">
+          Добавить контакт
+        </Button>
+      </Form>
+
+      // <form
+      //   onSubmit={this.handleSubmit}
+      //   style={{
+      //     width: '200px',
+      //     padding: '10px',
+      //     border: '1px solid black',
+      //   }}
+      // >
+      //   <label>
+      //     Name
+      //     <input
+      //       type="text"
+      //       name="name"
+      //       value={this.state.name}
+      //       onChange={this.handleChange}
+      //     />
+      //   </label>
+      //   <label>
+      //     Number
+      //     <input
+      //       type="text"
+      //       name="number"
+      //       value={this.state.number}
+      //       onChange={this.handleChange}
+      //     />
+      //   </label>
+      //   <button type="Submit">Add contact</button>
+      // </form>
     );
   }
 }

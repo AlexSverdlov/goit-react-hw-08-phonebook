@@ -1,17 +1,35 @@
 import React from 'react';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
 
 const ContactList = ({ contacts, onDelete }) => {
   return (
-    <ul>
+    <ListGroup>
       {contacts.map(({ id, name, number }) => (
-        <li key={id}>
+        <ListGroup.Item key={id}>
           {name}: {number}
-          <button onClick={() => onDelete(id)} style={{ marginLeft: '20px' }}>
+          <Button
+            variant="outline-primary"
+            type="button"
+            size="sm"
+            onClick={() => onDelete(id)}
+            style={{ marginLeft: '20px' }}
+          >
             Delete
-          </button>
-        </li>
+          </Button>
+        </ListGroup.Item>
       ))}
-    </ul>
+    </ListGroup>
+    // <ul>
+    //   {contacts.map(({ id, name, number }) => (
+    //     <li key={id}>
+    //       {name}: {number}
+    //       <button onClick={() => onDelete(id)} style={{ marginLeft: '20px' }}>
+    //         Delete
+    //       </button>
+    //     </li>
+    //   ))}
+    // </ul>
   );
 };
 export default ContactList;
