@@ -62,35 +62,6 @@ class ContactForm extends React.Component {
           Добавить контакт
         </Button>
       </Form>
-
-      // <form
-      //   onSubmit={this.handleSubmit}
-      //   style={{
-      //     width: '200px',
-      //     padding: '10px',
-      //     border: '1px solid black',
-      //   }}
-      // >
-      //   <label>
-      //     Name
-      //     <input
-      //       type="text"
-      //       name="name"
-      //       value={this.state.name}
-      //       onChange={this.handleChange}
-      //     />
-      //   </label>
-      //   <label>
-      //     Number
-      //     <input
-      //       type="text"
-      //       name="number"
-      //       value={this.state.number}
-      //       onChange={this.handleChange}
-      //     />
-      //   </label>
-      //   <button type="Submit">Add contact</button>
-      // </form>
     );
   }
 }

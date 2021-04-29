@@ -13,22 +13,6 @@ import storage from 'redux-persist/lib/storage';
 import contactsReduсer from './contacts/contacts-reducer';
 import authReduсer from './auth/auth-reduser';
 
-// const initialState = {
-//   contacts: {
-//     items: [
-//       { id: 1, name: 'ffff', number: '1111' },
-//       { id: 2, name: 'fffd', number: '2222' },
-//     ],
-//     filter: 'ff',
-//   },
-// };
-
-// const itemsPersistConfig = {
-//   key: 'items',
-//   storage,
-//   blacklist: ['filter'],
-// };
-
 const myMiddlware = store => next => action => {
   // console.log('dasdadads', action);
   next(action);

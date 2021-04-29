@@ -12,7 +12,6 @@ class ContactsView extends React.Component {
 
   render() {
     return (
-      // <div className="App" style={{ textAlign: 'left', margin: '20px' }}>
       <div>
         <h3>Страница контактов</h3>
         <ContactForm />

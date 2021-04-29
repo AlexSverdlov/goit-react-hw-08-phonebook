@@ -14,17 +14,6 @@ const Filter = ({ textFilter, onChange }) => (
       onChange={onChange}
     />
   </Form.Group>
-
-  // <label>
-  //   Find contact by name
-  //   <input
-  //     style={{ display: 'block' }}
-  //     type="text"
-  //     name="filter"
-  //     value={textFilter}
-  //     onChange={onChange}
-  //   />
-  // </label>
 );
 
 const mapStateToProps = state => ({

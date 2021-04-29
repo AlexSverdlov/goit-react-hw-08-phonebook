@@ -20,16 +20,6 @@ const ContactList = ({ contacts, onDelete }) => {
         </ListGroup.Item>
       ))}
     </ListGroup>
-    // <ul>
-    //   {contacts.map(({ id, name, number }) => (
-    //     <li key={id}>
-    //       {name}: {number}
-    //       <button onClick={() => onDelete(id)} style={{ marginLeft: '20px' }}>
-    //         Delete
-    //       </button>
-    //     </li>
-    //   ))}
-    // </ul>
   );
 };
 export default ContactList;
